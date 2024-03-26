@@ -1,0 +1,53 @@
+{
+  "version": "1.0.0",
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "name": "parser",
+  "description": "electron puppeteer parser",
+  "main": "index.js",
+  "bin": "./index.js",
+  "build": {
+    "appId": "com.appname.app",
+    "productName": "app",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "${productName}Portable.${version}.${ext}"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "scripts": {
+    "dev": "cross-env IS_DEV=true electron .",
+    "build": "npx electron-builder --win",
+    "build:mac": "npx electron-builder --mac",
+    "build:linux": "npx electron-builder --linux"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "chrome-paths": "^1.0.1",
+    "crypto": "^1.0.1",
+    "express": "^4.19.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "puppeteer": "^22.6.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-adblocker": "^2.13.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^29.1.5",
+    "electron-builder": "^24.13.3"
+  }
+}

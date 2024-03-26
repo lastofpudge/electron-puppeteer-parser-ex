@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+  <title>Scraping Parameters</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      text-align: left;
+      background-color: #fff
+    }
+
+    h2 {
+      font-size: 2rem
+    }
+
+    html {
+      line-height: 1.15;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 20px auto
+    }
+
+    .form-group {
+      margin-bottom: 1rem
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: .5rem
+    }
+
+    .form-control {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      user-select: none;
+      border: 1px solid transparent;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: .25rem;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+    }
+
+    .btn-primary {
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff
+    }
+
+    .btn-primary:hover {
+      color: #fff;
+      background-color: #0069d9;
+      border-color: #0062cc
+    }
+
+    .btn-start {
+      width: 100%;
+      margin-top: 20px
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="mb-4">Scraping Parameters</h2>
+
+    <p style="font-size:12px">Starting from:<br>
+      https://www.site.com/?page=</p>
+    <div class="form-group">
+      <label for="startPageInput">Start Page:</label>
+      <input type="number" id="startPageInput" class="form-control" value="1">
+    </div>
+    <div class="form-group">
+      <label for="endPageInput">End Page:</label>
+      <input type="number" id="endPageInput" class="form-control" value="6">
+    </div>
+    <div class="form-group">
+      <label for="limit">Products per-page limit:</label>
+      <input type="number" id="limit" class="form-control" value="-1">
+    </div>
+    <button id="startScrapingButton" class="btn btn-primary btn-start">Start Scraping</button>
+  </div>
+
+  <script src="preload.js"></script>
+</body>
+
+</html>
